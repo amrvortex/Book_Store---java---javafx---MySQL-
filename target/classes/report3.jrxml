@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8d8f0f02-814c-43c6-af9a-8eecad6dc914">
+	<queryString>
+		<![CDATA[select ISBN, sum(quantity) from bookstore.items group by ISBN order by sum(quantity) desc limit 10;]]>
+	</queryString>
+	<field name="ISBN" class="java.lang.String"/>
+	<field name="sum(quantity)" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="70" width="100" height="30" uuid="41461a90-6fda-4d66-97ec-40215da4c90f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4cc2d662-c361-4fbf-aa1f-97a12fe0b867"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ISBN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="60" y="29" width="100" height="30" uuid="8054d1d4-d236-4bd7-b68b-43711e88b7b6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4cc2d662-c361-4fbf-aa1f-97a12fe0b867"/>
+				</reportElement>
+				<text><![CDATA[ISBN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="310" y="70" width="100" height="30" uuid="daf3f727-9541-4271-ad87-33776c89f9a6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa6f0efb-1de5-4d4c-8673-806c0046179a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sum(quantity)}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="310" y="29" width="100" height="30" uuid="e6aacbcf-c52e-4a85-9655-8e85825262b4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa6f0efb-1de5-4d4c-8673-806c0046179a"/>
+				</reportElement>
+				<text><![CDATA[sum(quantity)]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

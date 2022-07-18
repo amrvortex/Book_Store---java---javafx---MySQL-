@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="1299.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.CartController">
+   <children>
+      <AnchorPane layoutX="245.0" prefHeight="42.0" prefWidth="1054.0" style="-fx-background-color: #616161;">
+         <children>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="966.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/notification_30px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="1006.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/settings_30px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="245.0" layoutY="42.0" prefHeight="573.0" prefWidth="1054.0">
+         <children>
+            <Button layoutX="946.0" layoutY="530.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="42.0" style="-fx-background-color: #212121;" text="&lt;&lt;" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="998.0" layoutY="530.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="42.0" style="-fx-background-color: #212121;" text=" &gt;&gt;" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Button>
+            <TableView fx:id="table" prefHeight="516.0" prefWidth="1054.0">
+              <columns>
+                <TableColumn fx:id="isbn" prefWidth="165.0" text="ISBN" />
+                <TableColumn fx:id="title" prefWidth="258.0" text="Title" />
+                  <TableColumn fx:id="category" minWidth="0.0" prefWidth="162.0" text="Category" />
+                  <TableColumn fx:id="publisher" prefWidth="232.0" text="Publisher" />
+                  <TableColumn fx:id="price" prefWidth="236.0" text="Price" />
+              </columns>
+            </TableView>
+            <TextField fx:id="item_isbn" layoutX="20.0" layoutY="528.0" prefHeight="31.0" prefWidth="158.0" promptText="ISBN" style="-fx-border-color: black;">
+               <font>
+                  <Font name="Tahoma Bold" size="15.0" />
+               </font>
+            </TextField>
+            <Button layoutX="188.0" layoutY="528.0" mnemonicParsing="false" onAction="#RemoveFromCart" prefHeight="31.0" prefWidth="180.0" style="-fx-background-color: #212121;" text="Remove From Cart" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="380.0" layoutY="528.0" mnemonicParsing="false" onAction="#Clear" prefHeight="31.0" prefWidth="130.0" style="-fx-background-color: #212121;" text="   Clear Cart" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="778.0" layoutY="528.0" mnemonicParsing="false" onAction="#Checkout" prefHeight="31.0" prefWidth="158.0" style="-fx-background-color: #212121;" text="       Place Order" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="803.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Check Circle_48px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="396.0" layoutY="532.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/close_window_48px.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="533.0" layoutY="528.0" prefHeight="31.0" prefWidth="222.0" style="-fx-border-color: black;">
+               <children>
+                  <Label layoutX="14.0" layoutY="-1.0" prefHeight="31.0" prefWidth="42.0" text="Total:">
+                     <font>
+                        <Font name="Tahoma Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="total_price" layoutX="54.0" layoutY="-1.0" prefHeight="31.0" prefWidth="158.0">
+                     <font>
+                        <Font name="Tahoma Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="613.0" prefWidth="177.0" style="-fx-background-color: #212121;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="34.0" prefHeight="42.0" prefWidth="245.0" text="   Book Store" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="42.0" fitWidth="31.0" layoutX="56.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" style="-fx-view-order: -1;">
+               <image>
+                  <Image url="@../icons/search_64px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="24.0" layoutX="51.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true" style="-fx-view-order: -1;">
+               <image>
+                  <Image url="@../icons/account_30px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="31.0" layoutX="71.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" style="-fx-view-order: -1;">
+               <image>
+                  <Image url="@../icons/shopping_cart_30px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="36.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/book_50px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="56.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" style="-fx-view-order: -1;">
+               <image>
+                  <Image url="@../icons/home_24px.png" />
+               </image>
+            </ImageView>
+            <Button layoutY="152.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #616161;" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutY="225.0" mnemonicParsing="false" onAction="#goToSearch" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #616161;" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutY="295.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #616161;" text="Cart" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutY="366.0" mnemonicParsing="false" onAction="#goToProfile" prefHeight="50.0" prefWidth="245.0" style="-fx-background-color: #616161;" text="My Profile" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="43.0" layoutY="494.0" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="158.0" style="-fx-background-color: #616161;" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

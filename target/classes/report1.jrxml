@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c0f4323-57d5-4468-af04-2425bd68a983">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[select ISBN, sum(quantity) from bookstore.customer_order natural join bookstore.items where date>'2021-12-10' group by ISBN;]]>
+	</queryString>
+	<field name="ISBN" class="java.lang.String"/>
+	<field name="sum(quantity)" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="300" y="60" width="100" height="30" uuid="fb3d0eb4-0e02-4f7a-9844-687fe6aadf6a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c08a8973-20b0-47bf-a3fb-ef605ac37222"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sum(quantity)}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="19" width="100" height="30" uuid="c7b6b777-a176-44b1-94eb-06bab3bd73cf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c08a8973-20b0-47bf-a3fb-ef605ac37222"/>
+				</reportElement>
+				<text><![CDATA[sum(quantity)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="60" width="100" height="30" uuid="1bb595f6-5c9f-4f27-a8db-663881859f05">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a4be3ea8-b811-4f14-8ba1-54a4fe28d516"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ISBN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="19" width="100" height="30" uuid="c9f2b3c4-9f73-49f3-b87f-c583f3f15c2e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a4be3ea8-b811-4f14-8ba1-54a4fe28d516"/>
+				</reportElement>
+				<text><![CDATA[ISBN]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

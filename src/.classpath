@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="main/java"/>
+	<classpathentry kind="lib" path=".idea/libraries/commons-beanutils-1.9.4.jar"/>
+	<classpathentry kind="lib" path=".idea/libraries/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path=".idea/libraries/commons-collections4-4.2.jar"/>
+	<classpathentry kind="lib" path=".idea/libraries/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path=".idea/libraries/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path=".idea/libraries/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="output" path="out/production/BookStore"/>
+</classpath>
